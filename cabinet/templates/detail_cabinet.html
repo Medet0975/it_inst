@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<h1>{{author.username}}</h1>
+<p>{{author.name}} - {{author.sur_name}}</p>
+
+{% for file in author.photos.all%}
+<img src="{{file}}" alt="..." width="600" height="750" >
+{%endfor%}
+<!--<p><a name="author_update"></a></p>-->
+<p><a href="{% url 'author_update' author.id %}"> update</a></p>
+<p><a href="{% url 'author_delete' author.id %}"> delete</a></p>
+
+
+</body>
+</html>
